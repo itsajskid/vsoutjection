@@ -9,17 +9,22 @@ The Value Stack Outjection plugin allows mulitple objects that are properties of
 
 Additional features:
 
-    Can create new instances of the object to be placed on the Value Stack for you. When the instance is created, it will be automatically set on your Action class.
-    If desired can move pushed objects one level below top-level object. This is key when some business logic or plugins need the Action class to be the top level object. 
+Can create new instances of the object to be placed on the Value Stack for you. When the instance is created, it will be automatically set on your Action class. If desired, it can move pushed objects one level below top-level object. This is key when some business logic or plugins need the Action class to be the top level object.
+
+VERSION 1.2.0
+
+- Field level objects can now be pushed annotated.
+- Annotate any method. The method must return a non-void type.
+- onAction attribute allows you control which objects get pushed to the ValueStack based on the action that is executed.
+
 
 Setup
 
 Setup for the Value Stack Outjection plugin is very simple. Follow the step below.
 Step 1
-
 Download the latest Value Stack Outjection distro. Move to your app's WEB-INF lib.
-Step 2
 
+Step 2
 In your package definition of your struts.xml (or sub configuration files) extend the vsoutject-default package. Within your action, make reference to the interceptor vsoutjectStack.
 
  <package name="xyz-employees" namespace="/employees" extends="vsoutject-default">
@@ -39,8 +44,8 @@ You can also define your own interceptor stacks with vsoutject:
             </interceptor-stack>
 
 NOTE: If you override an interceptor stack (such as defaultStack) or have defined your own interceptor stack, make sure the vsoutject interceptor reference comes BEFORE the params-interceptor.
-Step 3
 
+Step 3
 Annotate which properties you want pushed onto the value stack:
 
 public class EmployeeAction extends ActionSupport {
@@ -73,6 +78,7 @@ public class EmployeeAction extends ActionSupport {
         }       
 }
 
-Contact
 
-Contact me on twitter: @itsajskid 
+Contact me:
+on twitter: @itsajskid
+on github: itsajskid
