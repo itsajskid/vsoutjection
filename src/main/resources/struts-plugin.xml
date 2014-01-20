@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+        
+<struts>
+    <package name="vsoutject-default" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="vsoutject" class="com.allanshoulders.vsoutjection.interceptors.ValueStackOutjectionInterceptor"/>
+
+            <!-- Sample vsoutject stack -->
+            <interceptor-stack name="vsoutjectStack">
+            	<interceptor-ref name="vsoutject"/>
+            	<interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+
+        </interceptors>
+
+    </package>
+</struts>
