@@ -11,12 +11,12 @@ Additional features:
 
 Can create new instances of the object to be placed on the Value Stack for you. When the instance is created, it will be automatically set on your Action class. If desired, it can move pushed objects one level below top-level object. This is key when some business logic or plugins need the Action class to be the top level object.
 
-VERSION 1.2.0
+VERSION 1.2.1
 
 - Field level objects can now be pushed annotated.
 - Annotate any method. The method must return a non-void type.
 - onAction attribute allows you control which objects get pushed to the ValueStack based on the action that is executed.
-
+- Javadoc inaccuracy has been resolved.
 
 Setup
 
