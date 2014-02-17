@@ -9,7 +9,7 @@ package com.allanshoulders.vsoutjection.exceptions;
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.0
+ * @version 1.2.1
  * 
  *
  */

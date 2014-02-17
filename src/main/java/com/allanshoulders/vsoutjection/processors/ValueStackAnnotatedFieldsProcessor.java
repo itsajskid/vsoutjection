@@ -5,7 +5,6 @@ import java.lang.reflect.Field;
 import com.allanshoulders.vsoutjection.annotations.VSOutject;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionInvocation;
-import com.opensymphony.xwork2.DefaultTextProvider;
 
 /**
  * <p>
@@ -15,13 +14,10 @@ import com.opensymphony.xwork2.DefaultTextProvider;
  * </p>
  * 
  * <p>
- * In general, the fields are processed in the same order as a Stack. That is,
- * Last-In-First-Out (LIFO). The first annotated field will be processed
- * first, placing it at the bottom of the Stack (in most cases, not the 
- * absolute bottom as the {@link Action} class and 
- * {@link DefaultTextProvider} are processed first). 
- * Processing of the fields may vary depending on the value of certain
- * attributes associated with a given {@link VSOutject} annotation.
+ * There is no defined order that the annotated fields are processed. 
+ * Processing of the fields may vary depending on the value of 
+ * the <i>isTopLevel</i> attribute associated with a 
+ * given {@link VSOutject} annotation.
  * </p>
  * 
  * <p>
@@ -29,7 +25,7 @@ import com.opensymphony.xwork2.DefaultTextProvider;
  * </p>
  * 
  * @author Allan J. Shoulders
- * @version 1.2.0
+ * @version 1.2.1
  *
  */
 public class ValueStackAnnotatedFieldsProcessor implements Processor {

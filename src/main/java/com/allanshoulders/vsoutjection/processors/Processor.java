@@ -9,7 +9,7 @@ package com.allanshoulders.vsoutjection.processors;
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.0
+ * @version 1.2.1
  * 
  * 
  * @see ValueStackAnnotatedFieldsProcessor

@@ -16,7 +16,7 @@ import com.allanshoulders.vsoutjection.interceptors.ValueStackOutjectionIntercep
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.0
+ * @version 1.2.1
  * @see ValueStackOutjectionInterceptor
  *
  */
