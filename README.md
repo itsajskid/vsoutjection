@@ -1,8 +1,3 @@
-<h3>Notes</h3>
-All distro's associated with valuestack-outjection project. The jars, src, javadoc, or all.<br/>
-Sample project available (fork me!): http://github.com/itsajskid/vsoutjection-sample<br/>
-Developers guide coming soon!
-
 <h1>Struts 2 Value Stack Outjection</h1>
 Struts 2 plugin to push multiple objects on the value stack using annotations.
 
