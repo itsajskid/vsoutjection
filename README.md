@@ -16,7 +16,7 @@ The plugin can create new instances of the object to be placed on the Value Stac
 
 <h3>VERSION 1.2.1</h3>
 
-- Field level objects can now be pushed annotated.
+- Field level objects can now be annotated.
 - Annotate any method. The method must return a non-void type.
 - onAction attribute allows you control which objects get pushed to the ValueStack based on the action that is executed.
 - Javadoc inaccuracy has been resolved.
