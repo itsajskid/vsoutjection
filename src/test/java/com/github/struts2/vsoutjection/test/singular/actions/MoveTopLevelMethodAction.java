@@ -1,12 +1,14 @@
-package com.allanshoulders.vsoutjection.test.singular.actions;
+package com.github.struts2.vsoutjection.test.singular.actions;
 
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class MoveTopLevelMethodAction extends ActionSupport {
 	
@@ -20,7 +22,7 @@ public class MoveTopLevelMethodAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	@VSOutject(isTopLevel=false, newInstance=true)
+	@ValueStack(isTopLevel=false, newInstance=true)
 	public Data getMoveData() {
 		return moveData;
 	}

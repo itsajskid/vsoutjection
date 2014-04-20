@@ -1,15 +1,15 @@
-package com.allanshoulders.vsoutjection.annotations;
+package com.github.struts2.vsoutjection.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.allanshoulders.vsoutjection.interceptors.ValueStackOutjectionInterceptor;
+import com.github.struts2.vsoutjection.interceptors.ValueStackOutjectionInterceptor;
 
 /**
  * <p>
- * The VSOutject annotation allows certain accessor methods (getters in particular) to be
+ * The ValueStack annotation allows certain accessor methods (getters in particular) to be
  * flagged. Getter methods that have been flagged will have their returned references
  * pushed onto the ValueStack. 
  * </p>
@@ -23,7 +23,7 @@ import com.allanshoulders.vsoutjection.interceptors.ValueStackOutjectionIntercep
 
 @Target(value={ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface VSOutject {
+public @interface ValueStack {
 	/**
 	 * <p>
 	 * This attribute when set to false will alert the {@link ValueStackOutjectionInterceptor}
@@ -69,5 +69,5 @@ public @interface VSOutject {
 	 * </p>
 	 * 
 	 */
-	String onAction() default "";
+	String[] onAction() default {};
 }

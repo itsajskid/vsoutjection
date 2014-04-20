@@ -1,10 +1,10 @@
-package com.allanshoulders.vsoutjection.test;
+package com.github.struts2.vsoutjection.test;
 
-import com.allanshoulders.vsoutjection.exceptions.IllegalAnnotatedMethodException;
-import com.allanshoulders.vsoutjection.test.dao.Data;
-import com.allanshoulders.vsoutjection.test.singular.actions.OnActionMethodAction;
-import com.allanshoulders.vsoutjection.test.singular.actions.OutOfSyncFieldAction;
-import com.allanshoulders.vsoutjection.test.singular.actions.OutOfSyncMethodAction;
+import com.github.struts2.vsoutjection.exceptions.IllegalAnnotatedMethodException;
+import com.github.struts2.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.test.singular.actions.OnActionMethodAction;
+import com.github.struts2.vsoutjection.test.singular.actions.OutOfSyncFieldAction;
+import com.github.struts2.vsoutjection.test.singular.actions.OutOfSyncMethodAction;
 import com.opensymphony.xwork2.util.ValueStack;
 
 public class SingularValueStackOutjectionTestCase extends AbstractValueStackOutjectionTestCase {

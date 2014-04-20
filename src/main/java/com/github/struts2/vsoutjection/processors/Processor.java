@@ -1,9 +1,9 @@
-package com.allanshoulders.vsoutjection.processors;
+package com.github.struts2.vsoutjection.processors;
 
 /**
  * <p>
  * The Processor interface defines a single method that provides logic
- * as to how to process any fields or methods that contain {@link VSOutject}
+ * as to how to process any fields or methods that contain {@link ValueStack}
  * annotations.
  * </p>
  * 
@@ -20,7 +20,7 @@ public interface Processor {
 	
 	/**
 	 * An abstract method that should provide logic that
-	 * will process the {@link VSOutject} annotated methods or fields.
+	 * will process the {@link ValueStack} annotated methods or fields.
 	 * 
 	 * @throws Exception
 	 */

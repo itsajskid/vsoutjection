@@ -1,4 +1,4 @@
-package com.allanshoulders.vsoutjection.enums;
+package com.github.struts2.vsoutjection.enums;
 
 /**
  * <p>

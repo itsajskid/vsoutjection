@@ -8,7 +8,7 @@
     <package name="vsoutject-default" extends="struts-default">
 
         <interceptors>
-            <interceptor name="vsoutject" class="com.allanshoulders.vsoutjection.interceptors.ValueStackOutjectionInterceptor"/>
+            <interceptor name="vsoutject" class="com.github.struts2.vsoutjection.interceptors.ValueStackOutjectionInterceptor"/>
 
             <!-- Sample vsoutject stack -->
             <interceptor-stack name="vsoutjectStack">

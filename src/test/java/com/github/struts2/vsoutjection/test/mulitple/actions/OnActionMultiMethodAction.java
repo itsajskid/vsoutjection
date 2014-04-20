@@ -1,11 +1,13 @@
-package com.allanshoulders.vsoutjection.test.mulitple.actions;
+package com.github.struts2.vsoutjection.test.mulitple.actions;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class OnActionMultiMethodAction extends ActionSupport {
 
@@ -27,7 +29,7 @@ public class OnActionMultiMethodAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	@VSOutject(newInstance=true, onAction="onaction-default-test")
+	@ValueStack(newInstance=true, onAction="onaction-default-test")
 	public Data getDefaultData() {
 		return defaultData;
 	}
@@ -36,7 +38,7 @@ public class OnActionMultiMethodAction extends ActionSupport {
 		this.defaultData = defaultData;
 	}
 
-	@VSOutject(newInstance=true, onAction="onaction-custom-test")
+	@ValueStack(newInstance=true, onAction="onaction-custom-test")
 	public Data getCustomData() {
 		return customData;
 	}

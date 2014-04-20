@@ -1,18 +1,20 @@
-package com.allanshoulders.vsoutjection.test.mulitple.actions;
+package com.github.struts2.vsoutjection.test.mulitple.actions;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class OnActionMultiFieldAction extends ActionSupport {
 	
-	@VSOutject(newInstance=true, onAction="onaction-defaultfield-test")
+	@ValueStack(newInstance=true, onAction="onaction-defaultfield-test")
 	private Data defaultData;
 	
-	@VSOutject(newInstance=true, onAction="onaction-customfield-test")
+	@ValueStack(newInstance=true, onAction="onaction-customfield-test")
 	private Data customData;
 	
 	@Action(value="onaction-defaultfield-test")

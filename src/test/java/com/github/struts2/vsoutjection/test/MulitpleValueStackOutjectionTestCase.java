@@ -1,8 +1,8 @@
-package com.allanshoulders.vsoutjection.test;
+package com.github.struts2.vsoutjection.test;
 
 import java.util.Map;
 
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.util.ValueStack;
 
 
@@ -72,7 +72,7 @@ public class MulitpleValueStackOutjectionTestCase extends AbstractValueStackOutj
 	
 	public void testOnActionMultiAciton() throws Exception {
 		performTest("/onaction-default-test.action",
-				"testOnActionMultiAciton", 
+				"testOnActionMultiMethodAciton", 
 				new ValueStackOutjectionTestRunner() {
 					
 					@Override

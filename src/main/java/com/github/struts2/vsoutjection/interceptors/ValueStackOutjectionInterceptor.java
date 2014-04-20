@@ -1,9 +1,9 @@
-package com.allanshoulders.vsoutjection.interceptors;
+package com.github.struts2.vsoutjection.interceptors;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.processors.Processor;
-import com.allanshoulders.vsoutjection.processors.ValueStackAnnotatedFieldsProcessor;
-import com.allanshoulders.vsoutjection.processors.ValueStackAnnotatedMethodsProcessor;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.processors.Processor;
+import com.github.struts2.vsoutjection.processors.ValueStackAnnotatedFieldsProcessor;
+import com.github.struts2.vsoutjection.processors.ValueStackAnnotatedMethodsProcessor;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
@@ -16,16 +16,16 @@ import com.opensymphony.xwork2.interceptor.ParametersInterceptor;
  * 
  * <p>
  * Proper use of the ValueStackOutjectionInterceptor requires an Action class to annotate
- * its getter methods using the {@link VSOutject} annotations. For all getter methods
+ * its getter methods using the {@link ValueStack} annotations. For all getter methods
  * properly annotated, the ValueStackOutjectionInterceptor will find these methods, invoke
  * each annotated method, and push the returned reference onto the ValueStack.
  * </p>
  * 
  * <p>
- * The ValueStackOutjectionInterceptor can (if {@link VSOutject} annotation attributes are
+ * The ValueStackOutjectionInterceptor can (if {@link ValueStack} annotation attributes are
  * configured correctly) create a new instance of the returned type of the annotated getter
  * method. It can also move the pushed reference one level below the top level object on the 
- * ValueStack if needed. See {@link VSOutject} for further details.
+ * ValueStack if needed. See {@link ValueStack} for further details.
  * </p>
  * 
  * <p>
@@ -42,7 +42,7 @@ import com.opensymphony.xwork2.interceptor.ParametersInterceptor;
  * </p>
  * 
  * <p>
- * Finally, the {@link VSOutject} annotation should be used with caution. Beware of pushing 
+ * Finally, the {@link ValueStack} annotation should be used with caution. Beware of pushing 
  * multiple objects on the ValueStack of the same type, or objects with the same property 
  * names. Fundamental rules regarding ValueStack assignment priorities will apply.
  * </p> 
@@ -50,7 +50,7 @@ import com.opensymphony.xwork2.interceptor.ParametersInterceptor;
  * 
  * @author Allan J. Shoulders
  * @version 1.2.1
- * @see VSOutject
+ * @see ValueStack
  *
  */
 public class ValueStackOutjectionInterceptor extends MethodFilterInterceptor {

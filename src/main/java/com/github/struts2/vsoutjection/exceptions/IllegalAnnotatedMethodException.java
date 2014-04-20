@@ -1,9 +1,9 @@
-package com.allanshoulders.vsoutjection.exceptions;
+package com.github.struts2.vsoutjection.exceptions;
 
 /**
  * <p>
  * IllegalAnnotatedMethodException is a checked exception that is thrown when
- * a {@link VSOutject} annotated method sets the newInstance attribute to true
+ * a {@link ValueStack} annotated method sets the newInstance attribute to true
  * and does not have a corresponding setter method defined.
  * </p>
  * 

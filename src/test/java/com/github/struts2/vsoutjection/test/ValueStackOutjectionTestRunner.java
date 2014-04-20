@@ -1,4 +1,4 @@
-package com.allanshoulders.vsoutjection.test;
+package com.github.struts2.vsoutjection.test;
 
 
 public interface ValueStackOutjectionTestRunner {

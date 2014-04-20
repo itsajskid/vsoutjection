@@ -1,10 +1,12 @@
-package com.allanshoulders.vsoutjection.test.singular.actions;
+package com.github.struts2.vsoutjection.test.singular.actions;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class IsMethodAction extends ActionSupport {
 	
@@ -16,7 +18,7 @@ public class IsMethodAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	@VSOutject
+	@ValueStack
 	public Boolean isBoolData() {
 		boolData = Boolean.TRUE;
 		return boolData;

@@ -1,18 +1,20 @@
-package com.allanshoulders.vsoutjection.test.mulitple.actions;
+package com.github.struts2.vsoutjection.test.mulitple.actions;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class MoveTopLevelMultiFieldAction extends ActionSupport {
 
-	@VSOutject(isTopLevel=true)
+	@ValueStack(isTopLevel=true)
 	private Data topLevelData;
 	
-	@VSOutject(isTopLevel=false)
+	@ValueStack(isTopLevel=false)
 	private Data secondLevelData;
 	
 	public MoveTopLevelMultiFieldAction() {

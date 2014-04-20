@@ -1,8 +1,10 @@
-package com.allanshoulders.vsoutjection.processors;
+package com.github.struts2.vsoutjection.processors;
 
 import java.lang.reflect.Field;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
+import org.apache.commons.lang3.ArrayUtils;
+
+import com.github.struts2.vsoutjection.annotations.ValueStack;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionInvocation;
 
@@ -10,14 +12,14 @@ import com.opensymphony.xwork2.ActionInvocation;
  * <p>
  * This class in an implementation of the {@link Processor} interface. It's main
  * purpose is to process any field level properties that have been annotated with
- * the {@link VSOutject} annotation.
+ * the {@link ValueStack} annotation.
  * </p>
  * 
  * <p>
  * There is no defined order that the annotated fields are processed. 
  * Processing of the fields may vary depending on the value of 
  * the <i>isTopLevel</i> attribute associated with a 
- * given {@link VSOutject} annotation.
+ * given {@link ValueStack} annotation.
  * </p>
  * 
  * <p>
@@ -45,8 +47,8 @@ public class ValueStackAnnotatedFieldsProcessor implements Processor {
 	/**
 	 * <p>
 	 * This overridden method provides the logic needed to process any field
-	 * level {@link VSOutject} annotations. It searches through every field
-	 * in the current action class for any {@link VSOutject} annotated fields.
+	 * level {@link ValueStack} annotations. It searches through every field
+	 * in the current action class for any {@link ValueStack} annotated fields.
 	 * For all annotated fields, it will push those fields onto the ValueStack.
 	 * </p>
 	 * 
@@ -61,24 +63,23 @@ public class ValueStackAnnotatedFieldsProcessor implements Processor {
 		Object model = null;
 		
 		for (Field field : fields) {
-			if (field.isAnnotationPresent(VSOutject.class)) {
-				VSOutject vsOutject = field.getAnnotation(VSOutject.class);
+			if (field.isAnnotationPresent(ValueStack.class)) {
+				ValueStack vsAnnotation = field.getAnnotation(ValueStack.class);
 				
-				if (vsOutject.onAction().length() > 0 && 
-						!actionInvocation
-						.getProxy()
-						.getActionName().equals(vsOutject.onAction())) {
+				if (!ArrayUtils.isEmpty(vsAnnotation.onAction()) &&
+						!ArrayUtils.contains(vsAnnotation.onAction(), 
+								actionInvocation.getProxy().getActionName())) {
 					continue;
 				}
 				
-				if (vsOutject.newInstance()) {
+				if (vsAnnotation.newInstance()) {
 					model = vsoMgr.addNewInstance(field, action);
 				} else {
 					model = vsoMgr.getInaccessibleField(field, action);
 				}
 				
 				if (model != null ) {
-					vsoMgr.moveByTopLevelOption(model, vsOutject);
+					vsoMgr.moveByTopLevelOption(model, vsAnnotation);
 				}
 			}
 		}

@@ -1,14 +1,16 @@
-package com.allanshoulders.vsoutjection.test.mulitple.actions;
+package com.github.struts2.vsoutjection.test.mulitple.actions;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class NonStandardMultiMethodAction extends ActionSupport {
 
@@ -18,12 +20,12 @@ public class NonStandardMultiMethodAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
-	@VSOutject
+	@ValueStack
 	public Data createData () {
 		return new Data(1, "foo");
 	}
 	
-	@VSOutject
+	@ValueStack
 	public Map<Integer, Data> createDataMap () {
 		Map<Integer, Data> dataMap = new LinkedHashMap<Integer, Data>();
 		dataMap.put(1, new Data(1, "foo"));

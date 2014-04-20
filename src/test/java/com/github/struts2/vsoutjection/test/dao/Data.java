@@ -1,4 +1,4 @@
-package com.allanshoulders.vsoutjection.test.dao;
+package com.github.struts2.vsoutjection.test.dao;
 
 public class Data {
 	

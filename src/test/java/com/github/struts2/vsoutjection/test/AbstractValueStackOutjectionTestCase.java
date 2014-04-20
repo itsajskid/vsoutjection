@@ -1,10 +1,10 @@
-package com.allanshoulders.vsoutjection.test;
+package com.github.struts2.vsoutjection.test;
 
 import org.apache.struts2.StrutsTestCase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionProxy;
 import com.opensymphony.xwork2.util.ValueStack;
 

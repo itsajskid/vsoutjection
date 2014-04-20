@@ -1,21 +1,23 @@
-package com.allanshoulders.vsoutjection.test.mulitple.actions;
+package com.github.struts2.vsoutjection.test.mulitple.actions;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.test.dao.Data;
+import com.github.struts2.vsoutjection.annotations.ValueStack;
+import com.github.struts2.vsoutjection.test.dao.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace("/")
 @SuppressWarnings("serial")
 public class SimpleVSMultiFieldAction extends ActionSupport {
 
-	@VSOutject
+	@ValueStack
 	private Data simpleData;
 	
-	@VSOutject
+	@ValueStack
 	private Map<String, Data> dataMap;
 	
 	public SimpleVSMultiFieldAction() {

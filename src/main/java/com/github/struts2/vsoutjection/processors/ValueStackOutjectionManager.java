@@ -1,12 +1,11 @@
-package com.allanshoulders.vsoutjection.processors;
+package com.github.struts2.vsoutjection.processors;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import com.allanshoulders.vsoutjection.annotations.VSOutject;
-import com.allanshoulders.vsoutjection.enums.ProcessorEnum;
-import com.allanshoulders.vsoutjection.exceptions.IllegalAnnotatedMethodException;
+import com.github.struts2.vsoutjection.enums.ProcessorEnum;
+import com.github.struts2.vsoutjection.exceptions.IllegalAnnotatedMethodException;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.util.CompoundRoot;
 import com.opensymphony.xwork2.util.ValueStack;
@@ -24,7 +23,7 @@ import com.opensymphony.xwork2.util.ValueStack;
  */
 public class ValueStackOutjectionManager {
 	
-	private ValueStack valueStack;
+	private com.opensymphony.xwork2.util.ValueStack valueStack;
 	
 	/**
 	 * Single argument constructor must have a {@link ValueStack} reference
@@ -57,20 +56,21 @@ public class ValueStackOutjectionManager {
 	
 	/**
 	 * <p>
-	 * This method pushes an object onto the ValueStack. If the {@link VSOutject}
+	 * This method pushes an object onto the ValueStack. If the {@link ValueStack}
 	 * parameter's isTopLevel attribute is set to true, then the object is pushed one
 	 * level below. Otherwise, the object that is pushed onto the ValueStack is at
 	 * the very top of the stack.
 	 * </p>
 	 * 
 	 * @param model the object to be pushed onto the ValueStack.
-	 * @param vsOutject the {@link VSOutject} annotation belonging to the field
+	 * @param vsAnnotation the {@link ValueStack} annotation belonging to the field
 	 * or method of the model parameter.
 	 */
-	public void moveByTopLevelOption (Object model, VSOutject vsOutject) {
+	public void moveByTopLevelOption (Object model, 
+			com.github.struts2.vsoutjection.annotations.ValueStack vsAnnotation) {
 		valueStack.push(model);
 		
-		if (!vsOutject.isTopLevel()) {
+		if (!vsAnnotation.isTopLevel()) {
 			this.moveFromTopLevel();
 		}
 	}
@@ -81,7 +81,7 @@ public class ValueStackOutjectionManager {
 	 * synchronizes the reference with that of the {@link Action} class.
 	 * </p>
 	 * 
-	 * @param field the {@link VSOutject} annotated field reference.
+	 * @param field the {@link ValueStack} annotated field reference.
 	 * @param action the {@link Action} class reference.
 	 * @return the instantiated reference created and set on the 
 	 * {@link Action} class.
@@ -126,7 +126,7 @@ public class ValueStackOutjectionManager {
 	 * thrown.
 	 * </p>
 	 * 
-	 * @param method the {@link VSOutject} method that the return type will 
+	 * @param method the {@link ValueStack} method that the return type will 
 	 * be extracted from.
 	 * @param action the {@link Action} class reference.
 	 * @return the instantiated reference and set on the {@link Action} class
@@ -177,7 +177,7 @@ public class ValueStackOutjectionManager {
 		
 		if (setterStrBlder == null) {
 			throw new IllegalAnnotatedMethodException(
-					"@VSOutject annotated methods using newInstance=true" + 
+					"@ValueStack annotated methods using newInstance=true" + 
 							" must be compliant getter/is method.");			
 		}
 		
