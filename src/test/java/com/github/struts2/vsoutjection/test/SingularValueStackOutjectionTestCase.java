@@ -325,5 +325,67 @@ public class SingularValueStackOutjectionTestCase extends AbstractValueStackOutj
 			}
 		});
 	}
+	
+	public void testOnActionFieldMultiAction () throws Exception {
+		performTest("/onaction-multifield-1", "testOnActionFieldMultiAction",
+				new ValueStackOutjectionTestRunner() {
+					
+					@Override
+					public void testLogic(String actionName) throws Exception {
+						ValueStack valueStack = 
+								executeStrutsActionWorkFlow(actionName);
+						printValueStackObjectsClassTypes(valueStack);
+						
+						Object obj = valueStack.peek();
+						confirmDataIntegrity(obj, "foo");
+						
+					}
+				});
+		
+		performTest("/onaction-multifield-2", "testOnActionFieldMultiAction",
+				new ValueStackOutjectionTestRunner() {
+					
+					@Override
+					public void testLogic(String actionName) throws Exception {
+						ValueStack valueStack = 
+								executeStrutsActionWorkFlow(actionName);
+						printValueStackObjectsClassTypes(valueStack);
+						
+						Object obj = valueStack.peek();
+						confirmDataIntegrity(obj, "bar");
+						
+					}
+				});
+	}
+	
+	public void testOnActionMethodMultiAction() throws Exception {
+		performTest("/onaction-multimethod-action1", "testOnActionMethodMultiAction", 
+				new ValueStackOutjectionTestRunner() {
+					
+					@Override
+					public void testLogic(String actionName) throws Exception {
+						ValueStack valueStack =
+								executeStrutsActionWorkFlow(actionName);
+						printValueStackObjectsClassTypes(valueStack);
+						
+						Object obj = valueStack.peek();
+						confirmDataIntegrity(obj, "foo");
+					}
+				});
+		
+		performTest("/onaction-multimethod-action2", "testOnActionMethodMultiAction", 
+				new ValueStackOutjectionTestRunner() {
+					
+					@Override
+					public void testLogic(String actionName) throws Exception {
+						ValueStack valueStack =
+								executeStrutsActionWorkFlow(actionName);
+						printValueStackObjectsClassTypes(valueStack);
+						
+						Object obj = valueStack.peek();
+						confirmDataIntegrity(obj, "bar");
+					}
+				});
+	}
 
 }

@@ -9,7 +9,7 @@ package com.github.struts2.vsoutjection.exceptions;
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  * 
  *
  */

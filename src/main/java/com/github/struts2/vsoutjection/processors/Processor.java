@@ -9,10 +9,10 @@ package com.github.struts2.vsoutjection.processors;
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  * 
  * 
- * @see ValueStackAnnotatedFieldsProcessor
+ * @see ValueStackAnnotatedFieldsProcessor 
  * @see ValueStackAnnotatedMethodsProcessor
  *
  */

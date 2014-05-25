@@ -9,14 +9,14 @@ import com.github.struts2.vsoutjection.interceptors.ValueStackOutjectionIntercep
 
 /**
  * <p>
- * The ValueStack annotation allows certain accessor methods (getters in particular) to be
- * flagged. Getter methods that have been flagged will have their returned references
- * pushed onto the ValueStack. 
+ * The ValueStack annotation allows certain accessor methods (getters in particular) and fields
+ * to be flagged. Getter methods and fields that have been flagged will have their returned 
+ * references pushed onto the ValueStack. 
  * </p>
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  * @see ValueStackOutjectionInterceptor
  *
  */
@@ -27,8 +27,8 @@ public @interface ValueStack {
 	/**
 	 * <p>
 	 * This attribute when set to false will alert the {@link ValueStackOutjectionInterceptor}
-	 * to move the reference returned by the method one level below the top level object on
-	 * the value stack. When this attribute is set to true, the reference returned by the
+	 * to move the reference returned by the method or field one level below the top level 
+	 * object on the value stack. When this attribute is set to true, the reference returned by the
 	 * method will be pushed to the very top of the ValueStack. This attribute is set to
 	 * true by default.
 	 * </p>
@@ -40,7 +40,7 @@ public @interface ValueStack {
 	 * This attribute when set to true will alert the {@link ValueStackOutjectionInterceptor}
 	 * to create a new instance of the same type as the method's returned type. That instance
 	 * will be pushed on to the ValueStack. The instance will also be set within the Action
-	 * class. The Action class must have a corresponding setter method. The 
+	 * class. The Action class must have a corresponding field or setter method. The 
 	 * {@link ValueStackOutjectionInterceptor} will create a new instance of the object even
 	 * if the returned object by the getter method contains a reference. 
 	 * </p>
@@ -64,8 +64,7 @@ public @interface ValueStack {
 	 * </p>
 	 * 
 	 * <p>
-	 * This attribute is set to an empty string by default. When this
-	 * attribute is set to an empty string or not set at all it will be ignored.
+	 * When this attribute is set to an empty string or not set at all it will be ignored.
 	 * </p>
 	 * 
 	 */

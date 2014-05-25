@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.interceptor.ParametersInterceptor;
  * 
  * <p>
  * Proper use of the ValueStackOutjectionInterceptor requires an Action class to annotate
- * its getter methods using the {@link ValueStack} annotations. For all getter methods
+ * it's field or getter methods using the {@link ValueStack} annotations. For all getter methods
  * properly annotated, the ValueStackOutjectionInterceptor will find these methods, invoke
  * each annotated method, and push the returned reference onto the ValueStack.
  * </p>
@@ -49,7 +49,7 @@ import com.opensymphony.xwork2.interceptor.ParametersInterceptor;
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  * @see ValueStack
  *
  */

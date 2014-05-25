@@ -32,7 +32,7 @@ import com.opensymphony.xwork2.ActionInvocation;
  * </p>
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  *
  */
 public class ValueStackAnnotatedMethodsProcessor implements Processor {

@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.util.ValueStack;
  * </p>
  * 
  * @author Allan J. Shoulders
- * @see 1.2.0
+ * @see 2.0.1
  *
  */
 public class ValueStackOutjectionManager {

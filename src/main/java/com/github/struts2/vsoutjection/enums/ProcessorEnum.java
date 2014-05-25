@@ -9,7 +9,7 @@ package com.github.struts2.vsoutjection.enums;
  * 
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  *
  */
 public enum ProcessorEnum {

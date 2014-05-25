@@ -216,4 +216,56 @@ public class MulitpleValueStackOutjectionTestCase extends AbstractValueStackOutj
 				});
 	}
 	
+	public void testOnActionMultiAction () throws Exception {
+		performTest("/fielddata1-action", "testOnActionMultiAction", 
+				new ValueStackOutjectionTestRunner() {
+			
+			@Override
+			public void testLogic(String actionName) throws Exception {
+				ValueStack valueStack = executeStrutsActionWorkFlow(actionName);
+				printValueStackObjectsClassTypes(valueStack);
+				
+				int firstIdx = 0;
+				int secondIdx = 1;
+
+				Object[] objs = new Object[] {
+						valueStack.getRoot().get(firstIdx),
+						valueStack.getRoot().get(secondIdx)};
+				
+				for (Object obj: objs) {
+					if (obj instanceof Data) {
+						assertTrue(((Data)obj).getValue1().equals("fieldData1") ||
+								((Data)obj).getValue1().equals("methodData1"));
+					}
+				}
+				
+			}
+		});
+		
+		performTest("/fielddata2-action", "testOnActionMultiAction", 
+				new ValueStackOutjectionTestRunner() {
+			
+			@Override
+			public void testLogic(String actionName) throws Exception {
+				ValueStack valueStack = executeStrutsActionWorkFlow(actionName);
+				printValueStackObjectsClassTypes(valueStack);
+				
+				int firstIdx = 0;
+				int secondIdx = 1;
+
+				Object[] objs = new Object[] {
+						valueStack.getRoot().get(firstIdx),
+						valueStack.getRoot().get(secondIdx)};
+				
+				for (Object obj: objs) {
+					if (obj instanceof Data) {
+						assertTrue(((Data)obj).getValue1().equals("fieldData2") ||
+								((Data)obj).getValue1().equals("methodData2"));
+					}
+				}
+				
+			}
+		});
+	}
+	
 }

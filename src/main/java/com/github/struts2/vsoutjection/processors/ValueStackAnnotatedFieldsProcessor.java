@@ -17,8 +17,8 @@ import com.opensymphony.xwork2.ActionInvocation;
  * 
  * <p>
  * There is no defined order that the annotated fields are processed. 
- * Processing of the fields may vary depending on the value of 
- * the <i>isTopLevel</i> attribute associated with a 
+ * Placement of the fields on the @{link ValueStack} may vary depending 
+ * on the value of the <i>isTopLevel</i> attribute associated with a 
  * given {@link ValueStack} annotation.
  * </p>
  * 
@@ -27,7 +27,7 @@ import com.opensymphony.xwork2.ActionInvocation;
  * </p>
  * 
  * @author Allan J. Shoulders
- * @version 1.2.1
+ * @version 2.0.1
  *
  */
 public class ValueStackAnnotatedFieldsProcessor implements Processor {
@@ -52,7 +52,6 @@ public class ValueStackAnnotatedFieldsProcessor implements Processor {
 	 * For all annotated fields, it will push those fields onto the ValueStack.
 	 * </p>
 	 * 
-
 	 */
 	@Override
 	public void processAnnotations() throws Exception {
